@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+     <canvas id="canvas" width="800" height="800"></canvas>
+     <form id="controls" action="#">
+       <br>Points: <br>
+       <!--Number points: <input type="text" id="pointsNum" value="100"><br>-->
+       Number points: <input type="range" id="pointsNum" value="100" min="0" max="1000"><br>
+       Draw Points: <input type="checkbox" id="pointsEnable" checked><br>
+       Hollow Points: <input type="checkbox" id="pointsHollow"><br>
+       Point Colour: <input type="text" id="pointsColour" value="#fff"><br>
+       Point Radius: <input type="range" id="pointsRadius" value="2" min="0" max="100"><br>
+       Point Shadows: <input type="checkbox" id="pointsShadowsEnable" checked><br>
+       Point Shadow Size: <input type="range" id="pointsShadowsSize" value="10" min="0" max="100"><br>
+       Point Shadow Colour: <input type="text" id="pointsShadowsColour" value="#fff"><br>
+       Randomize Point Colours: <input type="checkbox" id="pointsRandomColours"><br>
+
+       <br>Canvas <br>
+       Canvas Width: <input type="text" id="canvasWidth" value="800"><br>
+       Canvas Height: <input type="text" id="canvasHeight" value="800"><br>
+       Backgroud Colour: <input type="text" id="backgroundColour" value="#000"><br>
+       Randomize Backgroud Colour: <input type="checkbox" id="backgroundRandomColours"><br>
+
+       <br>Lines <br>
+       Draw lines: <input type="checkbox" id="linesEnable" checked><br>
+       Line Colour: <input type="text" id="lineColour" value="#fff"><br>
+       Line Thickness: <input type="range" id="lineThickness" value="1" min="1" max="20"><br>
+       Line Shadows: <input type="checkbox" id="lineShadowsEnable" checked><br>
+       Line Shadow Size: <input type="range" id="linesShadowsSize" value="10" min="0" max="100"><br>
+       Line Shadow Colour: <input type="text" id="linesShadowsColour" value="#fff"><br>
+       Randomize Line Colours: <input type="checkbox" id="linesRandomColours"><br>
+
+       <br>Function <br>
+       Golden Var 1: <input type="text" id="goldenVar1" value="4.5"><br>
+       Golden Var 2: <input type="text" id="goldenVar2" value="1"><br>
+       Golden Var 3: <input type="text" id="goldenVar3" value="2"><br>
+       Golden Var 4: <input type="text" id="goldenVar4" value="1"><br>
+       Golden Var 5: <input type="text" id="goldenVar5" value="5"><br>
+       <input type="button" value="Draw" id="drawButton">
+     </form>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     <script src="script.js"></script>
+  </body>
+</html>
