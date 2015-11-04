@@ -54,7 +54,6 @@ function draw(points, lines, background, goldenVars, canvas){
       if(lines.randomColours){
         canvas.element.fillStyle=randomColour();
         canvas.element.strokeStyle=randomColour();
-        console.log(randomColour());
       }
 
       canvas.element.lineWidth = lines.thickness;
@@ -69,10 +68,4 @@ function draw(points, lines, background, goldenVars, canvas){
       prevX = x;
     }
   }
-}
-
-
-function randomColour(){
-  //16777215 == #FFFFFF
-  return "#" + Math.floor(Math.random()*16777215).toString(16);
 }

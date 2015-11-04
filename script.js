@@ -40,20 +40,18 @@ function updateDrawParams(){
   canvas.width = $("#canvasHeight").val();
   $("#canvas").attr("height",canvas.height);
   $("#canvas").attr("width",canvas.width);
+
+  frameRate = parseInt($("#frameRate").val());
 }
 
 $( document ).ready(function() {
   updateDrawParams();
   draw(points,lines,background,goldenVars,canvas);
+  $("#downloadGif").hide();
 });
 
 $("#drawButton").click(function(){
   updateDrawParams();
-  /*console.log(points)
-  console.log(lines)
-  console.log(background)
-  console.log(goldenVars)
-  console.log(canvas)*/
   draw(points,lines,background,goldenVars,canvas);
 });
 
