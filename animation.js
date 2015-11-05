@@ -38,9 +38,10 @@ $("#playButton").click(function(){
 });
 
 $("#gifButton").click(function(){
-  encoder = new GIFEncoder();
-  encoder.setRepeat(0);
-  encoder.start();
+  //encoder = new GIFEncoder();
+  //encoder.setRepeat(0);
+  //encoder.start();
+  encoder = new Whammy.Video(frameRate);
   time = parseFloat($("#animationTime").val());
   //lerp(time, frameRate, frame1, frame2, function(){lerp(time, frameRate, frame2, frame3,null)});
   lerp(time, frameRate, frame1, frame2, true, null);
@@ -53,9 +54,9 @@ function lerp(time, frameRate, frame1, frame2, makeGif, callback){
   }
   var numFrames = time * frameRate; //300
   var frameDisplayTime = time / numFrames; // 0.1
-  if(makeGif){
-    encoder.setDelay(frameDisplayTime);
-  }
+  //if(makeGif){
+    //encoder.setDelay(frameDisplayTime);
+  //}
   var changeRate = {};
   changeRate.points = {};
   changeRate.points.num = Math.round((frame2.points.num - frame1.points.num)/numFrames);
@@ -102,7 +103,8 @@ function lerp(time, frameRate, frame1, frame2, makeGif, callback){
 
     draw(points,lines,background,goldenVars,canvas);
     if(makeGif){
-      encoder.addFrame(canvas.element)
+      //encoder.addFrame(canvas.element)
+      encoder.add(canvas.canvas.toDataURL("image/webp"));
     }
   }
 
@@ -120,9 +122,13 @@ function lerp(time, frameRate, frame1, frame2, makeGif, callback){
       callback();
     }else{
       if(makeGif){
-        encoder.finish();
-        binary_gif = encoder.stream().getData();
-        data_url = 'data:image/gif;base64,'+encode64(binary_gif);
+        //encoder.finish();
+        //binary_gif = encoder.stream().getData();
+        //data_url = 'data:image/gif;base64,'+encode64(binary_gif);
+
+        output = encoder.compile();
+        data_url = (window.URL).createObjectURL(output);
+
         $("#gifUrl").val(data_url);
         $("#downloadGif").attr("href",data_url);
         $("#downloadGif").show();

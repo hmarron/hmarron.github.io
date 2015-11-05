@@ -36,6 +36,7 @@ function updateDrawParams(){
   goldenVars.gv5 = parseFloat($("#goldenVar5").val());
 
   canvas.element = document.getElementById("canvas").getContext("2d");
+  canvas.canvas = document.getElementById("canvas")
   canvas.height = $("#canvasWidth").val();
   canvas.width = $("#canvasHeight").val();
   $("#canvas").attr("height",canvas.height);
